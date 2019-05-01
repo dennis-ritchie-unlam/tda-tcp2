@@ -8,11 +8,11 @@ import dominio.ColaEstatica;
 import dominio.StackOverflowException;
 
 public class ColaEstaticaTest {
-	private ColaEstatica cola;
+	private ColaEstatica<Integer> cola;
 	
 	@Before
 	public void setUp() throws Exception {
-		cola = new ColaEstatica(5);
+		cola = new ColaEstatica<Integer>(5);
 		cola.offer(1);
 		cola.offer(2);
 		cola.offer(3);

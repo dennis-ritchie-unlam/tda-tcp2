@@ -29,11 +29,8 @@ public class PilaDinamica<T> implements Pila<T> {
 
 	@Override
 	public void empty() {
-		T elemento;
-		while (!isEmpty()) {
-			elemento = pop();
-		}
-		elemento = null;
+		while(top != null)
+			top = top.getSiguiente();
 	}
 
 	@Override

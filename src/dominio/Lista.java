@@ -8,9 +8,9 @@ public class Lista<T> {
 
 	public void pushBack(T elemento) throws StackOverflowException {
 		if (null == primero)
-			primero = ultimo = new Nodo(elemento, null);
+			primero = ultimo = new Nodo<T>(elemento, null);
 		else {
-			Nodo nuevo = new Nodo(elemento, null);
+			Nodo<T> nuevo = new Nodo<T>(elemento, null);
 			ultimo.setSiguiente(nuevo);
 			ultimo = ultimo.getSiguiente();
 		}
@@ -39,9 +39,9 @@ public class Lista<T> {
 
 	public void pushFront(T elemento) {
 		if (null == primero)
-			primero = ultimo = new Nodo(elemento, null);
+			primero = ultimo = new Nodo<T>(elemento, null);
 		else
-			primero = new Nodo(elemento, primero);
+			primero = new Nodo<T>(elemento, primero);
 		cant++;
 	}
 
