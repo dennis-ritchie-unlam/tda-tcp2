@@ -2,7 +2,7 @@ package dominio;
 
 public interface Cola {
 
-	public void offer(Object dato);
+	public void offer(Object dato) throws StackOverflowException;
 	
 	public Object poll();
 	
