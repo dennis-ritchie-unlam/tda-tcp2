@@ -1,25 +1,26 @@
 package dominio;
 
-public class PilaDinamica implements Pila {
-	
-	private Object top = null;
-	private int cantidad = 0;
-	
+public class PilaDinamica<T> implements Pila<T> {
+
+	private Nodo<T> top = null;
+
 	@Override
-	public void push(Object dato) throws Exception {
+	public T pop() {
 		// TODO Auto-generated method stub
+		if (this.top == null)
+			return null;
+
+		T elemento = top.getElemento();
+		Nodo<T> aux = top.getSiguiente();
+		top = null;
+		top = aux;
+
+		return elemento;
 	}
 
 	@Override
-	public Object pop() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object peek() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public T peek() {
+		return this.top.getElemento();
 	}
 
 	@Override
@@ -29,8 +30,15 @@ public class PilaDinamica implements Pila {
 
 	@Override
 	public void empty() {
-		// TODO Auto-generated method stub
-
+		T elemento;
+		while (!isEmpty()) {
+			elemento = pop();
+		}
+		elemento = null;
 	}
 
+	@Override
+	public void push(T elemento) throws Exception {
+		this.top = new Nodo<T>(elemento, this.top);
+	}
 }

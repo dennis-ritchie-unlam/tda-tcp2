@@ -1,13 +1,13 @@
 package dominio;
 
-public interface Pila {
-	public void push(Object dato) throws Exception;
+public interface Pila<T> {
+	public void push(T elemento) throws Exception;
 
-	public Object pop() throws Exception;
+	public T pop();
 
-	public Object peek() throws Exception;
+	public T peek() throws Exception;
 
 	public boolean isEmpty();
-	
+
 	public void empty();
 }
