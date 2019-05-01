@@ -6,7 +6,6 @@ public class PilaDinamica<T> implements Pila<T> {
 
 	@Override
 	public T pop() {
-		// TODO Auto-generated method stub
 		if (this.top == null)
 			return null;
 

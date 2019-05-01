@@ -3,17 +3,15 @@ package dominio;
 public class PilaEstática<T> implements Pila {
 	private int tope = -1;
 	private Object[] dato;
-	private int cant;
 
 	public PilaEstática(int cant) {
-		this.cant = cant;
 		this.dato = new Object[cant];
 	}
 
 	@Override
-	public void push(Object dato) throws Exception {
-		if (tope >= cant)
-			throw new Exception();
+	public void push(Object dato) throws StackOverflowException {
+		if (tope == this.dato.length-1)
+			throw new StackOverflowException();
 
 		this.dato[++tope] = dato;
 	}
@@ -43,6 +41,8 @@ public class PilaEstática<T> implements Pila {
 	public void empty() {
 		for (int i = 0; i <= this.tope; i++)
 			this.dato[i] = null;
+		
+		tope = -1;
 	}
 
 }
