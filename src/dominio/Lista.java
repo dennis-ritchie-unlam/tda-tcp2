@@ -2,9 +2,9 @@ package dominio;
 
 public class Lista<T> {
 
-	private Nodo<T> primero;
-	private Nodo<T> ultimo;
-	private int cant;
+	protected Nodo<T> primero;
+	protected Nodo<T> ultimo;
+	protected int cant;
 
 	public void pushBack(T elemento) throws StackOverflowException {
 		if (null == primero)
