@@ -1,6 +1,6 @@
 package dominio;
 
-public class ColaEstatica implements Cola {
+public class ColaEstatica<T> implements Cola<Object> {
 	private int primerElemento = 0;
 	private int ultimoElemento = -1;
 	private int tamanyo;
@@ -33,7 +33,7 @@ public class ColaEstatica implements Cola {
 			if(primerElemento == tamanyo) primerElemento = 0;
 		}
 				
-		return  obj;
+		return obj;
 	}
 
 	@Override
