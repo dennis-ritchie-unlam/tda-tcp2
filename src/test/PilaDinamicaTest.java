@@ -41,12 +41,28 @@ public class PilaDinamicaTest {
 	}
 
 	@Test
-	public void pullTest() throws Exception {
+	public void popTest() throws Exception {
 		int valor = new Integer(100);
 		this.p.push(valor);
 		Assert.assertEquals(false, this.p.isEmpty());
 		int valorActual = this.p.pop();
 		Assert.assertEquals(valor, valorActual);
+		Assert.assertEquals(true, this.p.isEmpty());
+	}
+	
+	@Test
+	public void popTwoIntegerTest() throws Exception {
+		int valor100 = new Integer(100);
+		int valor200 = new Integer(100);
+		
+		this.p.push(valor100);
+		this.p.push(valor200);
+		
+		int valor200Esperado = this.p.pop();
+		int valor100Esperado = this.p.pop();
+	
+		Assert.assertEquals(valor100, valor100Esperado);
+		Assert.assertEquals(valor200, valor200Esperado);
 		Assert.assertEquals(true, this.p.isEmpty());
 	}
 

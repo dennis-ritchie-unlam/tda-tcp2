@@ -1,6 +1,6 @@
 package dominio;
 
-public class PilaEstática<T> implements Pila {
+public class PilaEstática<T> implements Pila<Object> {
 	private int tope = -1;
 	private Object[] dato;
 
