@@ -1,12 +1,12 @@
 package dominio;
 
-public interface Cola {
+public interface Cola<T> {
 
-	public void offer(Object dato) throws StackOverflowException;
+	public void offer(T dato) throws StackOverflowException;
 	
-	public Object poll();
+	public T poll();
 	
-	public Object peek();
+	public T peek();
 	
 	public boolean isEmpty();
 	
