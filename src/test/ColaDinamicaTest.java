@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import dominio.ColaDinamica;
+import dominio.PilaEstática;
 import dominio.StackOverflowException;
 
 public class ColaDinamicaTest<T> {
@@ -49,5 +50,15 @@ public class ColaDinamicaTest<T> {
 		Assert.assertEquals(true, cola.isEmpty());		
 		Assert.assertEquals(null, cola.peek());
 	}
-
+	
+	@Test
+	public void tiempoUnMillonTest() throws StackOverflowException {
+		long startTime = System.currentTimeMillis();
+		for (int i = 0; i < 1000000; i++) {
+			this.cola.offer(0);
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.print(endTime - startTime);
+		System.out.println(" ms");
+	}
 }

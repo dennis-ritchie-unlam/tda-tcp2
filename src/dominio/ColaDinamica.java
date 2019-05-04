@@ -1,43 +1,45 @@
 package dominio;
 
 public class ColaDinamica<T> implements Cola<T> {
-	private Nodo<T> primerElemento;
-	private Nodo<T> ultimoElemento;
+	private Nodo<T> primero;
+	private Nodo<T> ultimo;
 
 	@Override
 	public void offer(T dato) throws StackOverflowException {
 		Nodo<T> nuevo = new Nodo<T>(dato, null);
-		if(primerElemento == null) {
-			primerElemento = nuevo;
+		if(primero == null) {
+			primero = nuevo;
 		} else {
-			ultimoElemento.setSiguiente(nuevo);
+			ultimo.setSiguiente(nuevo);
 		}
-		ultimoElemento = nuevo;
+		ultimo = nuevo;
 	}
 
 	@Override
 	public T poll() {
-		if(primerElemento == null) return null;
-		Nodo<T> elemento = primerElemento;
-		primerElemento = primerElemento.getSiguiente();
+		if(primero == null) 
+			return null;
+		Nodo<T> elemento = primero;
+		primero = primero.getSiguiente();
+		
 		return elemento.getElemento();
 	}
 
 	@Override
 	public T peek() {
-		return primerElemento != null ? primerElemento.getElemento() : null;
+		return primero != null ? primero.getElemento() : null;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return primerElemento == null;
+		return primero == null;
 	}
 
 	@Override
 	public void empty() {
-		while(primerElemento != null)
-			primerElemento = primerElemento.getSiguiente();
-		ultimoElemento = null;
+		while(primero != null)
+			primero = primero.getSiguiente();
+		ultimo = null;
 	}
 
 }

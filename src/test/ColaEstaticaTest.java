@@ -53,4 +53,15 @@ public class ColaEstaticaTest {
 		Assert.assertEquals(null, cola.peek());
 	}
 
+	@Test
+	public void tiempoUnMillonTest() throws StackOverflowException {
+		cola = new ColaEstatica<Integer>(1000000);
+		long startTime = System.currentTimeMillis();
+		for (int i = 0; i < 1000000; i++) {
+			this.cola.offer(0);
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.print(endTime - startTime);
+		System.out.println(" ms");
+	}
 }
