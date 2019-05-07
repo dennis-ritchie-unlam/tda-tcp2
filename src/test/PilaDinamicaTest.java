@@ -5,8 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import dominio.PilaDinamica;
-import dominio.PilaEstática;
-import dominio.StackOverflowException;
 
 public class PilaDinamicaTest {
 
@@ -83,7 +81,7 @@ public class PilaDinamicaTest {
 	public void tiempoUnMillonTest() throws Exception {
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < 1000000; i++) {
-			this.p.push(0);
+			this.p.push(i);
 		}
 		long endTime = System.currentTimeMillis();
 		System.out.print(endTime - startTime);

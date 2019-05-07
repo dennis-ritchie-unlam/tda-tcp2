@@ -58,7 +58,7 @@ public class ColaEstaticaTest {
 		cola = new ColaEstatica<Integer>(1000000);
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < 1000000; i++) {
-			this.cola.offer(0);
+			cola.offer(i);
 		}
 		long endTime = System.currentTimeMillis();
 		System.out.print(endTime - startTime);

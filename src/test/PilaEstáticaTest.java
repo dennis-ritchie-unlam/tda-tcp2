@@ -66,4 +66,16 @@ public class PilaEstáticaTest {
 			this.p.push(valor);
 		}
 	}
+
+	@Test
+	public void tiempoUnMillonTest() throws Exception {
+		PilaEstática<Integer> pila = new PilaEstática<Integer>(1000000);
+		long startTime = System.currentTimeMillis();
+		for (int i = 0; i < 1000000; i++) {
+			pila.push(i);
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.print(endTime - startTime);
+		System.out.println(" ms");
+	}
 }

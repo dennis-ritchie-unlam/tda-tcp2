@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import dominio.ColaDinamica;
-import dominio.PilaEstática;
 import dominio.StackOverflowException;
 
 public class ColaDinamicaTest<T> {
@@ -55,7 +54,7 @@ public class ColaDinamicaTest<T> {
 	public void tiempoUnMillonTest() throws StackOverflowException {
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < 1000000; i++) {
-			this.cola.offer(0);
+			this.cola.offer(i);
 		}
 		long endTime = System.currentTimeMillis();
 		System.out.print(endTime - startTime);
