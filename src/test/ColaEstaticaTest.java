@@ -55,7 +55,7 @@ public class ColaEstaticaTest {
 
 	@Test
 	public void tiempoUnMillonTest() throws StackOverflowException {
-		cola = new ColaEstatica<Integer>(1000000);
+		ColaEstatica<Integer> cola = new ColaEstatica<Integer>(1000000);
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < 1000000; i++) {
 			cola.offer(i);
